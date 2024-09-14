@@ -20,7 +20,7 @@ class _LocationPageState extends State<LocationPage> {
   LatLng? _currentPosition;
   final MapController _mapController = MapController();
   final double _distance = 0.0;
-  
+
   final LatLngBounds bounds = LatLngBounds(
     const LatLng(-90.0, -180.0), // Southwest corner
     const LatLng(90.0, 180.0), // Northeast corner
@@ -79,7 +79,6 @@ class _LocationPageState extends State<LocationPage> {
               ),
             ),
             SizedBox(width: 10),
-            
           ],
         ),
         leading: IconButton(
@@ -176,7 +175,9 @@ class _LocationPageState extends State<LocationPage> {
                         const SizedBox(height: 4),
                         Text(
                             'Distance: ${_distance.toStringAsFixed(2)} meters'),
-                        Text('${_currentPosition?.latitude ?? widget.latitude}, ${_currentPosition?.longitude ?? widget.longitude}', style: const TextStyle(fontSize: 14)),
+                        Text(
+                            '${_currentPosition?.latitude ?? widget.latitude}, ${_currentPosition?.longitude ?? widget.longitude}',
+                            style: const TextStyle(fontSize: 14)),
                         const SizedBox(height: 4),
                       ],
                     ),
@@ -194,3 +195,4 @@ class _LocationPageState extends State<LocationPage> {
     );
   }
 }
+
