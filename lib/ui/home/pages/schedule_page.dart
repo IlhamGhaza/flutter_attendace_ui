@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
-class HistoryPage extends StatefulWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+class SchedulePage extends StatefulWidget {
+  const SchedulePage({super.key});
 
   @override
-  _HistoryPageState createState() => _HistoryPageState();
+  State<SchedulePage> createState() => _SchedulePageState();
 }
 
-class _HistoryPageState extends State<HistoryPage> {
+class _SchedulePageState extends State<SchedulePage> {
   DateTime selectedDate = DateTime.now();
   bool isDetailVisible = false;
-
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('History'),
@@ -30,7 +29,6 @@ class _HistoryPageState extends State<HistoryPage> {
         children: [
           _buildDateSelector(),
           _buildAttendanceSummary(),
-          if (isDetailVisible) _buildAttendanceDetails(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -132,7 +130,7 @@ class _HistoryPageState extends State<HistoryPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Absensi Datang',
+                    'Jadwal Kerja',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -142,10 +140,10 @@ class _HistoryPageState extends State<HistoryPage> {
                   SizedBox(height: 8),
                   Row(
                     children: [
-                      Icon(Icons.place, color: Colors.white),
+                      Icon(Icons.work, color: Colors.white),
                       SizedBox(width: 8),
                       Text(
-                        'Kantor',
+                        'Shift Pagi',
                         style: TextStyle(color: Colors.white),
                       ),
                     ],
@@ -156,7 +154,7 @@ class _HistoryPageState extends State<HistoryPage> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '08:00',
+                    '08:00 - 17:00',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -177,7 +175,7 @@ class _HistoryPageState extends State<HistoryPage> {
     );
   }
 
-  Widget _buildAttendanceDetails() {
+  Widget _buildScheduleDetails() {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       color: Colors.blue[300],
@@ -187,7 +185,7 @@ class _HistoryPageState extends State<HistoryPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Lokasi',
+              'Detail Jadwal',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -198,12 +196,12 @@ class _HistoryPageState extends State<HistoryPage> {
             Row(
               children: [
                 const Text(
-                  'Status',
+                  'Shift',
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(width: 16),
                 Text(
-                  'Sesuai spot Absensi',
+                  'Pagi',
                   style: TextStyle(color: Colors.green[200]),
                 ),
               ],
@@ -212,12 +210,12 @@ class _HistoryPageState extends State<HistoryPage> {
             Row(
               children: [
                 const Text(
-                  'Longitude',
+                  'Jam Masuk',
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(width: 16),
                 Text(
-                  '114.56789012',
+                  '08:00',
                   style: TextStyle(color: Colors.green[200]),
                 ),
               ],
@@ -226,12 +224,12 @@ class _HistoryPageState extends State<HistoryPage> {
             Row(
               children: [
                 const Text(
-                  'Latitude',
+                  'Jam Pulang',
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(width: 16),
                 Text(
-                  '-8.1234567',
+                  '17:00',
                   style: TextStyle(color: Colors.green[200]),
                 ),
               ],
@@ -239,12 +237,12 @@ class _HistoryPageState extends State<HistoryPage> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Add map view functionality here
+                // Add schedule edit functionality here
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue[100],
               ),
-              child: const Text('Lihat di Peta',
+              child: const Text('Edit Jadwal',
                   style: TextStyle(color: Colors.blue)),
             ),
           ],

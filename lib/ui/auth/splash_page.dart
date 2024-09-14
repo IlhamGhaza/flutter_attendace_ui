@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../core/core.dart';
-import '../home/pages/main_page.dart';
 import 'login_page.dart';
 
 class SplashPage extends StatelessWidget {
@@ -23,13 +22,13 @@ class SplashPage extends StatelessWidget {
             child: Assets.images.logoWhite.image(),
           ),
           const Spacer(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Assets.images.flutterLogo.image(height: 65),
-              SizedBox(height: 60), // Add some padding from the bottom
-            ],
-          ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //     Assets.images.flutterLogo.image(height: 65),
+          //     SizedBox(height: 60), // Add some padding from the bottom
+          //   ],
+          // ),
           const SpaceHeight(20.0),
         ],
       ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_attendace/ui/home/pages/history_page.dart';
-import 'package:flutter_attendace/ui/home/pages/profile_pages.dart';
-import 'package:flutter_attendace/ui/home/pages/setting_pages.dart';
+
 
 import '../../../core/core.dart';
+import 'history_page.dart';
 import 'home_page.dart';
+import 'profile_pages.dart';
+import 'setting_pages.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

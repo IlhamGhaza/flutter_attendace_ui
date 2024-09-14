@@ -81,7 +81,7 @@ class ProfilePage extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           const Text(
-            'hera@geoface.id | +6285806391116',
+            'Hello, Chopper Sensei',
             style: TextStyle(
               color: Colors.white,
             ),
