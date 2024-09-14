@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/core.dart';
+import 'home_page.dart';
 
 class AttendanceSuccessPage extends StatelessWidget {
   const AttendanceSuccessPage({super.key});
@@ -15,7 +16,7 @@ class AttendanceSuccessPage extends StatelessWidget {
           children: [
             Assets.images.success.image(),
             const Text(
-              'Asiap !',
+              'Sip !',
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.w700,
@@ -35,7 +36,9 @@ class AttendanceSuccessPage extends StatelessWidget {
             ),
             const SpaceHeight(80.0),
             Button.filled(
-              onPressed: () => context.popToRoot(),
+              onPressed: () {
+                context.pushReplacement(const HomePage());
+              },
               label: 'Oke, dimengerti',
             ),
           ],
